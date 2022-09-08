@@ -1,0 +1,13 @@
+<div class="container">
+    <form (ngSubmit) = "onSubmit()" [formGroup] = "form" >
+        <input type="text" placeholder="name" formControlName="name">
+        <p *ngIf="name.invalid && (name.touched || name.dirty)">Name is invalid</p>
+
+        <input type="text" placeholder="occupation" formControlName="occupation">
+        <input type="email" placeholder="email" formControlName="email">
+        <input type="text" placeholder="subject" formControlName="subject">
+        <textarea  placeholder="content" formControlName="content"></textarea>
+
+        <button type="submit" [disabled] = "form.invalid || sent"> Submit </button>
+    </form>
+</div>
